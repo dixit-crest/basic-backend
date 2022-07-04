@@ -2,10 +2,11 @@ const express = require("express")
 const CONSTANTS = require("./constants")
 const userRoutes = require("./routes/userRoutes")
 const app = express()
+const cors = require("cors");
 
 const mongoose = require("mongoose")
 const messages = require("./constants/messages")
-
+app.use(cors())
 mongoose.connect(CONSTANTS.DB_STRING)
 const db = mongoose.connection
 

@@ -4,7 +4,7 @@ const messages = require("../constants/messages")
 const getUsers = async (req, res) => {
     try {
         const users = await Users.find({}, { __v: 0 })
-        res.status(201).json({ ...messages.DATA_RETRIVED, data: users })
+        res.status(201).json({ ...messages.DATA_RETRIVED, users })
     } catch (error) {
         console.log({ ...error });
         res.status(500).json({ ...messages.SERVER_ERROR })
